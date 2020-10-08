@@ -1,0 +1,108 @@
+.circle {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    display: inline-block;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #808080;
+
+}
+
+.rounded-rectangle {
+    width: 62px;
+    height: 62px;
+    border-radius: 20%;
+    display: inline-block;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #808080;
+}
+
+.i {
+    height: 50px;
+    width: 50px;
+    background-size: 400px 400px;
+
+    background-image: url(../img/icon-list.png);
+}
+
+.i-person {
+    background-position-x: 9%;
+    background-position-y: 9.7%;
+}
+
+.i-phone {
+    background-position-x: 36%;
+    background-position-y: 9.4%;
+}
+
+.i-message {
+    background-position-x: 63%;
+    background-position-y: 9%;
+}
+
+.i-clock {
+    background-position-x: 90.4%;
+    background-position-y: 9.2%;
+}
+
+.i-music {
+    background-position-x: 9.5%;
+    background-position-y: 36.5%;
+}
+
+.i-photo {
+    background-position-x: 36%;
+    background-position-y: 36.5%;
+}
+
+.i-photocamera {
+    background-position-x: 63.3%;
+    background-position-y: 36.9%;
+}
+
+.i-videocamera {
+    background-position-x: 90.6%;
+    background-position-y: 36.3%;
+}
+
+.i-webcam {
+    background-position-x: 9%;
+    background-position-y: 64%;
+}
+
+.i-microphone {
+    background-position-x: 36.4%;
+    background-position-y: 63.9%;
+}
+
+.i-trashcan {
+    background-position-x: 63.6%;
+    background-position-y: 63.7%;
+}
+
+.i-find {
+    background-position-x: 90.6%;
+    background-position-y: 63.7%;
+}
+
+.i-location {
+    background-position-x: 8.8%;
+    background-position-y: 91.15%;
+}
+
+.i-setting {
+    background-position-x: 36%;
+    background-position-y: 91.15%;
+}
+
+.i-speaker {
+    background-position-x: 64%;
+    background-position-y: 91.15%;
+}
+
+.i-note {
+    background-position-x: 90.8%;
+    background-position-y: 91.1%;
+}

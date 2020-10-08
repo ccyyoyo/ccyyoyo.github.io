@@ -20,89 +20,88 @@
 }
 
 .i {
-    height: 50px;
-    width: 50px;
+
     background-size: 400px 400px;
 
     background-image: url(../img/icon-list.png);
 }
 
 .i-person {
-    background-position-x: 9%;
-    background-position-y: 9.7%;
+    background-position-x: 7.7%;
+    background-position-y: 8.1%;
 }
 
 .i-phone {
-    background-position-x: 36%;
-    background-position-y: 9.4%;
+    background-position-x: 35%;
+    background-position-y: 8.1%;
 }
 
 .i-message {
-    background-position-x: 63%;
-    background-position-y: 9%;
+    background-position-x: 63.5%;
+    background-position-y: 8.1%;
 }
 
 .i-clock {
-    background-position-x: 90.4%;
-    background-position-y: 9.2%;
+    background-position-x: 91.8%;
+    background-position-y: 8.1%;
 }
 
 .i-music {
-    background-position-x: 9.5%;
+    background-position-x: 8.2%;
     background-position-y: 36.5%;
 }
 
 .i-photo {
-    background-position-x: 36%;
+    background-position-x: 35.5%;
     background-position-y: 36.5%;
 }
 
 .i-photocamera {
-    background-position-x: 63.3%;
+    background-position-x: 63.7%;
     background-position-y: 36.9%;
 }
 
 .i-videocamera {
-    background-position-x: 90.6%;
-    background-position-y: 36.3%;
+    background-position-x: 91.5%;
+    background-position-y: 36.4%;
 }
 
 .i-webcam {
-    background-position-x: 9%;
-    background-position-y: 64%;
+    background-position-x: 7.7%;
+    background-position-y: 64.6%;
 }
 
 .i-microphone {
-    background-position-x: 36.4%;
-    background-position-y: 63.9%;
+    background-position-x: 35.8%;
+    background-position-y: 64.1%;
 }
 
 .i-trashcan {
-    background-position-x: 63.6%;
-    background-position-y: 63.7%;
+    background-position-x: 63.9%;
+    background-position-y: 63.9%;
 }
 
 .i-find {
-    background-position-x: 90.6%;
-    background-position-y: 63.7%;
+    background-position-x: 91.9%;
+    background-position-y: 64%;
 }
 
 .i-location {
-    background-position-x: 8.8%;
-    background-position-y: 91.15%;
+    background-position-x: 7.2%;
+    background-position-y: 92.4%;
 }
 
 .i-setting {
-    background-position-x: 36%;
-    background-position-y: 91.15%;
+    background-position-x: 35.5%;
+    background-position-y: 92.5%;
 }
 
 .i-speaker {
     background-position-x: 64%;
-    background-position-y: 91.15%;
+    background-position-y: 92.5%;
 }
 
 .i-note {
-    background-position-x: 90.8%;
-    background-position-y: 91.1%;
+    background-position-x: 92%;
+    background-position-y: 92.5%;
 }

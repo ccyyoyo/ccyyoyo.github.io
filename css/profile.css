@@ -1,0 +1,181 @@
+#all {
+    background-color: #cdd6e2;
+}
+
+.container {
+    max-width: 720px;
+}
+
+.nav {
+    /* background-color: #AFC4CD; */
+}
+
+.nav .container {
+    width: 100%;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% auto;
+}
+
+.nav-content {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    margin-right: 25%;
+}
+
+.main-tittle {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-tittle img {
+    height: 300px;
+    margin-right: 8%;
+}
+
+.main-tittle h1 {
+    font-weight: bolder;
+}
+
+.main-tittle h2 {
+    font-weight: bolder;
+}
+
+.main-text {
+    margin: 10% 10%;
+    text-align: justify;
+    font-size: larger;
+}
+
+.nav-icon {
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.nav-icon a {
+    color: #000;
+}
+
+.nav-links {
+    margin: auto;
+    width: 75%;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 30%;
+}
+
+.nav-links a {
+    color: aliceblue;
+    padding: 10px 1em;
+    margin: 1px 15px;
+    position: relative;
+}
+
+.nav-links a :after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: -5px;
+    height: 0px;
+    border-bottom: 1px solid #fff;
+    transition: .3s;
+}
+
+.nav-links a:hover:after {
+    left: 0;
+    right: 0;
+    background-color: blanchedalmond;
+}
+
+#skills {
+    margin-top: 180px;
+}
+
+.skill-tittle h2 {
+    text-decoration: underline;
+}
+
+.skill-content {
+    display: flex;
+    justify-content: space-around;
+    font-size: larger;
+}
+
+.projects {
+    margin-top: 180px;
+}
+
+.project-tittle {
+    margin-bottom: 50px;
+}
+
+.project-tittle h2 {
+    text-decoration: underline;
+}
+
+.project-content {
+    display: flex;
+    justify-content: center;
+}
+
+.car h4 {
+    text-align: center;
+}
+
+.car img {
+    height: 300px;
+}
+
+.project-content {
+    display: flex;
+}
+
+.car {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.car img {
+    margin-bottom: 25px;
+}
+
+.car p {
+    text-align: justify;
+    font-size: large;
+}
+
+.footer {
+    /* background-color: #AFC4CD; */
+    height: 200px;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: space-around;
+    width: 20%;
+}
+
+.footer-content img {
+
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.footer-content p {
+    margin-top: 0;
+    margin-bottom: 0;
+}

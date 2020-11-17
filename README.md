@@ -1,1 +1,1 @@
-https://ccyyoyo/ccyyoyo.github.io/index.html
+https://ccyyoyo.github.io/

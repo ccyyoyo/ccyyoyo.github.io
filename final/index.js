@@ -7,7 +7,7 @@ $(document).ready(()=>{
 
     //困難度easy:0,normal:1,hard:2,insane:3
     var diff = 0;
-    console.log(diff)
+    //console.log(diff)
 
     //設定畫布大小
     canvas.width = innerWidth-10
@@ -353,33 +353,37 @@ $(document).ready(()=>{
                 x:player.x + plyvc
             })
         }
+        if(keyID === 'Space'){
+            console.log('space')
+        }
     }, false);
 
-    addEventListener('click',(event)=>{
-        //console.log(score)
-        const angle = Math.atan2(event.clientY - player.y, event.clientX - player.x)
-        const velocity = {
-            x : Math.cos(angle)*10,
-            y : Math.sin(angle)*10
-        }
-        projectiles.push(new Projectile(player.x,player.y,6,'red',velocity))
-        
+addEventListener('click',(event)=>{
+    //console.log(score)
+    const angle = Math.atan2(event.clientY - player.y, event.clientX - player.x)
+    const velocity = {
+        x : Math.cos(angle)*10,
+        y : Math.sin(angle)*10
     }
-    )
+    projectiles.push(new Projectile(player.x,player.y,6,'red',velocity))
+    
+}
+)
 
 
     //點擊
     $("#startGameBtn").click(()=>{
-        init();
-        animate();
-        spawnE();
-        startTimer();
-        t = 0
         //$('#startingBox').style.display = 'none'
         $('#startingBox').hide(200);
         $('#wlc').html("<h1>Oh no, you got hit！</h1>")
         $('#sg').hide()
         $('#sg1').hide()
+        init();
+        animate();
+        spawnE();
+        startTimer();
+        t = 0
+        
         })
 
     $("#diffBtn").click(()=>{

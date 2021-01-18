@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just a shooting game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <canvas></canvas>
+    <style>
+        body{
+            margin: 0;
+        }
+    </style>
+    
+    <div class="fixed-top" >
+        <div id="score-box">
+        <span>Score: </span>
+        <span id="score">0</span>
+        </div>
+        <div id="timer">
+            <span>Time: </span>
+            <span id="mins">00:</span>
+            <span id="seconds">00</span>  
+        </div>
+    </div>
+    
+
+
+    <div class="position-absolute top-50 start-50 translate-middle d-flex menu" >
+        <div class="p-3 text-center" id="startingBox" >
+            <h1 id="wlc">Welcome</h1>
+            <h2 id="sg">This is just a shooting game</h2>
+            <h2 id="sg1">Try to get 10000 points as fast as possible！</h2>
+            <h1 class="fs-1 fw-bolder p-1 mb-0 pb-0" id="bigScore">0</h1>
+            <p>points</p>
+
+            <div class="btnMenu">
+                <button type="button" class="btn btn-primary" id="startGameBtn">START GAME</button>
+                <button type="button" class="btn btn-primary" id="diffBtn">DIFFICULTY</button>
+                <button type="button" class="btn btn-primary" id="controlsBtn">CONTROLS</button>
+                <button type="button" class="btn btn-primary" id="top3Btn">THE TOP 3</button>
+            </div>
+        </div>
+        
+        <div class="p-3 text-center" id="diff">
+            <h1 >DIFFICULTY</h1>
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <button class="btn btn-info" id="easy">EASY</button>
+                <button class="btn btn-info" id="norm">NORMAL</button>
+                <button class="btn btn-info" id="hard">HARD</button>
+                <button class="btn btn-info" id="insane">INSANE</button>
+            </div>
+            <img src="./img/back.png" alt="" id="back2"> 
+        </div>
+
+        <div class="p-3 text-center" id="controls">
+            <h1 >CONTROLS</h1>
+            <img src="./img/wasd.jpg" alt="" id="wasd">
+            <img src="./img/mouse.jpg" alt="" id="mouse">
+            <img src="./img/back.png" alt="" id="back"> 
+        </div>
+        
+        <div class="p-3 text-center" id="top3">
+            <h1>TOP 3</h1>
+            <ol id="top3list">
+                <li>AAAA: <span>5000</span></li>
+                <li>BBBB: <span>4500</span></li>
+                <li>CCCC: <span>4000</span></li>
+            </ol>
+            <img src="./img/back.png" alt="" id="back1"> 
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

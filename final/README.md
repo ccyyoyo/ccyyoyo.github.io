@@ -1,4 +1,4 @@
-### shootingGame
+## ShootingGame
 **https://ccyyoyo.github.io/final/**
 >這是一個2D的射擊遊戲，要在最短的時間內得到一萬分
 

@@ -252,8 +252,8 @@ $(document).ready(()=>{
                 clearInterval(spawnEnemyInterval);
             }
 
-            var hitOnScore = 100
-            var vanishScore = 300
+            var hitOnScore = 300
+            var vanishScore = 500
         //     if(diff == 0){
         //         hitOnScore = 200
         //         vanishScore = 500

@@ -1,0 +1,57 @@
+<svg width="400" height="250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="player" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="enemy" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ff4757;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="250" fill="url(#bg)"/>
+  
+  <!-- Stars -->
+  <circle cx="50" cy="40" r="1" fill="#ffffff" opacity="0.8"/>
+  <circle cx="120" cy="20" r="1.5" fill="#ffffff" opacity="0.6"/>
+  <circle cx="200" cy="60" r="1" fill="#ffffff" opacity="0.9"/>
+  <circle cx="280" cy="30" r="1" fill="#ffffff" opacity="0.7"/>
+  <circle cx="350" cy="50" r="1.5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="80" cy="100" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="320" cy="120" r="1" fill="#ffffff" opacity="0.6"/>
+  <circle cx="180" cy="200" r="1.5" fill="#ffffff" opacity="0.7"/>
+  <circle cx="60" cy="180" r="1" fill="#ffffff" opacity="0.8"/>
+  <circle cx="380" cy="200" r="1" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Player (center) -->
+  <polygon points="200,140 190,160 210,160" fill="url(#player)" stroke="#ffffff" stroke-width="1"/>
+  
+  <!-- Enemies -->
+  <circle cx="100" cy="80" r="8" fill="url(#enemy)" opacity="0.9"/>
+  <circle cx="320" cy="100" r="6" fill="url(#enemy)" opacity="0.8"/>
+  <circle cx="80" cy="200" r="7" fill="url(#enemy)" opacity="0.7"/>
+  <circle cx="350" cy="180" r="5" fill="url(#enemy)" opacity="0.9"/>
+  
+  <!-- Bullets -->
+  <circle cx="200" cy="120" r="2" fill="#ffff00"/>
+  <circle cx="150" cy="90" r="1.5" fill="#ffff00"/>
+  <circle cx="270" cy="150" r="2" fill="#ffff00"/>
+  
+  <!-- Score UI -->
+  <rect x="10" y="10" width="100" height="25" fill="rgba(0,0,0,0.7)" rx="5"/>
+  <text x="15" y="27" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Score: 5420</text>
+  
+  <!-- Timer UI -->
+  <rect x="290" y="10" width="100" height="25" fill="rgba(0,0,0,0.7)" rx="5"/>
+  <text x="295" y="27" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">Time: 02:15</text>
+  
+  <!-- Game Title Overlay -->
+  <rect x="0" y="0" width="400" height="250" fill="rgba(13,110,253,0.1)"/>
+  <text x="200" y="130" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle" opacity="0.3">2D SHOOTING GAME</text>
+</svg>

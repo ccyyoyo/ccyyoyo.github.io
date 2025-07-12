@@ -1,118 +1,1241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/profile.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鄭丞佑</title>
-    <link rel="shortcut icon" href="img/favicon.ico"/>
-    <link rel="bookmark" href="img/favicon.ico"/>
+    <meta name="description" content="Cherng Yow Cheng - Software Engineer at Mirle Automation Corporation specializing in AGV control systems, AI-driven manufacturing solutions, and industrial automation. Expertise in C++, Python, and smart manufacturing.">
+    <meta name="keywords" content="Cherng Yow Cheng, Software Engineer, AGV Control, Industrial Automation, C++, Python, Smart Manufacturing, Mirle Automation, NYCU">
+    <meta name="author" content="Cherng Yow Cheng">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Cherng Yow Cheng - Software Engineer | Industrial Automation">
+    <meta property="og:description" content="Software Engineer at Mirle Automation Corporation specializing in AGV control systems, AI-driven manufacturing solutions, and industrial automation">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ccyyoyo.github.io">
+    <meta property="og:image" content="https://ccyyoyo.github.io/img/碩士大頭.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cherng Yow Cheng - Software Engineer | Industrial Automation">
+    <meta name="twitter:description" content="Software Engineer at Mirle Automation Corporation specializing in AGV control systems, AI-driven manufacturing solutions, and industrial automation">
+    <meta name="twitter:image" content="https://ccyyoyo.github.io/img/碩士大頭.jpg">
+    
+    <!-- Performance and Accessibility -->
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="color-scheme" content="light dark">
+    <link rel="preload" href="js/main.js" as="script">
+    
+    <title>Cherng Yow - ME / Front End Developer | Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/profile.css">
+    
+    <!-- CSS Custom Properties for Theming -->
+    <style>
+        :root {
+            --font-heading: 'Inter', sans-serif;
+            --font-body: 'Source Sans Pro', sans-serif;
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --success-color: #198754;
+            --info-color: #0dcaf0;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        [data-bs-theme="dark"] {
+            --bs-body-bg: #1a1a1a;
+            --bs-body-color: #ffffff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+        }
+        
+        body {
+            font-family: var(--font-body);
+            scroll-behavior: smooth;
+        }
+        
+        /* Enhanced navigation styles */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background-color: var(--primary-color);
+            border-radius: 1px;
+        }
+        
+        /* Loading animation */
+        .navbar-toggler.active .navbar-toggler-icon {
+            transform: rotate(90deg);
+            transition: transform 0.3s ease;
+        }
+        
+        /* Enhanced hover effects */
+        .card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Project Cards Styling */
+        .project-card {
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 15px !important;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+        }
+        
+        .project-image-container {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(13, 110, 253, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .project-overlay-content {
+            text-align: center;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover .project-overlay-content {
+            transform: translateY(0);
+        }
+        
+        
+        /* Feature Items */
+        .feature-item {
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-item i {
+            display: block;
+        }
+        
+        /* Badge Styling */
+        .badge {
+            font-size: 0.75rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+        
+        /* Button Enhancements */
+        .btn {
+            border-radius: 8px;
+            font-weight: 500;
+            padding: 10px 20px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .project-card {
+                margin-bottom: 2rem;
+            }
+            
+            .project-image-container {
+                height: 200px;
+            }
+            
+            .d-md-flex {
+                flex-direction: column !important;
+            }
+            
+            .d-md-flex .btn {
+                margin-bottom: 0.5rem;
+            }
+        }
+        
+        /* Dark theme adjustments */
+        [data-bs-theme="dark"] .project-card {
+            background-color: #2d3748;
+            border: 1px solid #4a5568;
+        }
+        
+        [data-bs-theme="dark"] .feature-item {
+            color: #e2e8f0;
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Tech Canvas Background */
+        #techCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
+    <canvas id="techCanvas"></canvas>
     <div id="all">
-        <div class="nav">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" data-nav-section="navbar">
             <div class="container">
-                <div class="nav-content">
-                    <h1 class="nav-icon">
-                        <a href="/">Yowxz</a>
-                    </h1>
-                </div>
-                <div class="nav-links">
-                    <a href="#" class="nav__link">About</a>
-                    <a href="#skills" class="nav__link">Skills</a>
-                    <a href="#contact" class="nav__link">Contact</a>
-                </div>
+                <a class="navbar-brand fw-bold" href="/" data-brand="logo">
+                    <h1 class="h4 mb-0">Yowxz</h1>
+                </a>
                 
-            </div>
-        </div>
-        <div class="container">
-            <main>
-                <div class="content">
-                    <div class="main" id="about">
-                        <div class="main-tittle">
-                            <img src="img/P1440837.jpg" alt="">
-                            <div class="tittle-text">
-                                <h1>I'm Cherng Yow</h1>
-                                <h2>ME / Front End</h2>
-                            </div>
-                            
-                        </div>
-                        <p class="main-text">
-                            I am a senior student in mechanical engineering who loves programming. 
-                            I learned how to use Matlab and Arduino in my mechanical engineering classes and studied Python by myself.
-                            I have been programming for two years and now I am learning the basics of front end web development.
-                        </p>
-                    </div>
+                <!-- Mobile menu toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Navigation links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about" data-nav-link="about" data-section-target="about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills" data-nav-link="skills" data-section-target="skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#experience" data-nav-link="experience" data-section-target="experience">Experience</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#education" data-nav-link="education" data-section-target="education">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects" data-nav-link="projects" data-section-target="projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact" data-nav-link="contact" data-section-target="contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Theme Toggle Button -->
+                            <button class="btn btn-outline-secondary ms-2" type="button" id="themeToggle" 
+                                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Toggle theme"
+                                    aria-label="Toggle dark/light theme">
+                                <i class="bi bi-sun" id="themeIcon"></i>
+                            </button>
+                        </li>
+                    </ul>
                 </div>
-            </main>
-            <section id="skills">
-                <div class="container">
-                    <div class="skill-tittle">
-                        <h2>Skills</h2>
-                    </div>
-                    <div class="skill-content">
-                        <div class="ME">
-                            <div class="skill-tittle">
-                                <h4>Mechanical Engineering</h3>
-                                <ul>
-                                    <li>AutoCad</li>
-                                    <li>Matlab</li>
-                                    <li>AutoDesk Inventor</li>
-                                    <li>Abaqus</li>
-                                    <li>Arduino</li>
-                                </ul>
+            </div>
+        </nav>
+        <!-- Main Content -->
+        <div class="container">
+            <main role="main">
+                <!-- Hero/About Section -->
+                <section id="about" class="hero-section py-5" data-section="about">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-md-5 text-center mb-4 mb-md-0">
+                            <div class="profile-image floating" data-animate="fade-in">
+                                <img src="img/碩士大頭.jpg" 
+                                     alt="Cherng Yow - Profile Picture" 
+                                     class="img-fluid rounded-circle shadow-lg"
+                                     style="max-width: 280px; width: 100%; border: 3px solid var(--primary-color); box-shadow: 0 0 30px var(--primary-color);"
+                                     loading="lazy">
                             </div>
                         </div>
-                        <div class="FEP">
-                            <div class="skill-tittle">
-                                <h4>Programming</h3>
-                                    <ul>
-                                        <li>Github</li>
-                                        <li>VS code</li>
-                                        <li>Html & CSS</li>
-                                        <li>Javascript</li>
-                                        <li>Python</li>
+                        <div class="col-lg-8 col-md-7">
+                            <div class="hero-content" data-animate="slide-up">
+                                <h1 class="display-4 fw-bold mb-3" data-heading="name">
+                                    I'm Cherng Yow
+                                </h1>
+                                <h2 class="h3 text-muted mb-4" data-heading="title">
+                                    Software Engineer | Industrial Engineering & Management
+                                </h2>
+                                <p class="lead fs-5 lh-lg" data-content="bio">
+                                    Software Engineer at Mirle Automation Corporation specializing in AGV control systems and automation. 
+                                    Master's in Industrial Engineering & Management from NYCU, with expertise in C++, Python, and AI-driven manufacturing solutions.
+                                    Passionate about smart manufacturing, optimization algorithms, and industrial automation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <!-- Skills Section -->
+            <section id="skills" class="skills-section py-5 bg-light" data-section="skills">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold" data-heading="skills-title">Skills</h2>
+                        <p class="lead text-muted">Technical expertise across engineering and programming</p>
+                    </div>
+                    
+                    <div class="row g-4" data-skills-container="true">
+                        <!-- Programming Languages -->
+                        <div class="col-lg-6">
+                            <div class="card h-100 shadow-sm border-0" data-skill-category="programming">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-code-slash text-primary fs-3 me-3"></i>
+                                        <h4 class="card-title mb-0 fw-semibold">Programming Languages</h4>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item border-0 px-0 py-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>Python
+                                        </li>
+                                        <li class="list-group-item border-0 px-0 py-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>C++
+                                        </li>
+                                        <li class="list-group-item border-0 px-0 py-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>C#
+                                        </li>
+                                        <li class="list-group-item border-0 px-0 py-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>SQL
+                                        </li>
+                                        <li class="list-group-item border-0 px-0 py-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>MATLAB
+                                        </li>
                                     </ul>
+                                </div>
                             </div>
                         </div>
                         
+                        <!-- Frameworks & Tools -->
+                        <div class="col-lg-6">
+                            <div class="card h-100 shadow-sm border-0" data-skill-category="frameworks">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-tools text-primary fs-3 me-3"></i>
+                                        <h4 class="card-title mb-0 fw-semibold">Frameworks & Tools</h4>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item border-0 px-0 py-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>gRPC
+                                        </li>
+                                        <li class="list-group-item border-0 px-0 py-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>WebSocket
+                                        </li>
+                                        <li class="list-group-item border-0 px-0 py-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>PyQt
+                                        </li>
+                                        <li class="list-group-item border-0 px-0 py-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>MQTT
+                                        </li>
+                                        <li class="list-group-item border-0 px-0 py-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>A* Algorithm / ECBS
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    
                 </div>
             </section>
-            <section class="projects">
+
+            <!-- Experience Section -->
+            <section id="experience" class="experience-section py-5 bg-light" data-section="experience">
                 <div class="container">
-                    <div class="project-tittle">
-                        <h2>My projects</h2>
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold" data-heading="experience-title">Professional Experience</h2>
+                        <p class="lead text-muted">Software engineering and automation expertise in industrial settings</p>
                     </div>
-                    <div class="project-content">
-                        <div class="car">
-                            <h4><a href = "期末報告.pdf">Autonomous Wind Powered Car</a></h4>
-                            <img src="img/car1.jpg"  alt="Autonomous Wind Powered Car">
-                            <p>In the capstone course of Mechanical Engineering, we are asked to design and make a car which is powered by wind. 
-                                It can track the road by itself, and overtake if there is a car. This car contains the knoweledge of fluid mechanics, kinematics,
-                                auto control system and Arduino.</p>
+                    
+                    <div class="row g-4">
+                        <!-- Mirle Automation Corporation -->
+                        <div class="col-12">
+                            <div class="card experience-card shadow-sm border-0" data-experience="mirle">
+                                <div class="card-body p-4">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-8">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <i class="bi bi-building text-primary fs-3 me-3"></i>
+                                                <div>
+                                                    <h4 class="card-title mb-1 fw-bold text-primary">Software Engineer</h4>
+                                                    <h5 class="text-muted mb-0">Mirle Automation Corporation</h5>
+                                                </div>
+                                            </div>
+                                            <p class="text-muted mb-3"><i class="bi bi-calendar3 me-2"></i>April 2024 – Present | Hsinchu, Taiwan</p>
+                                            <p class="card-text mb-3">
+                                                <strong>AGV & CTU Control Systems Development</strong><br>
+                                                Specializing in automated guided vehicle control systems and container transfer units for industrial automation.
+                                            </p>
+                                            
+                                            <div class="experience-details">
+                                                <ul class="list-unstyled">
+                                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                        Developed C++ logic modules for AGV control, including navigation, path planning, and task scheduling
+                                                    </li>
+                                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                        Designed and tested CTU systems from architecture to module integration
+                                                    </li>
+                                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                        Integrated gRPC interfaces for real-time data synchronization between systems
+                                                    </li>
+                                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                        Migrated traffic management from rule-based logic to ECBS with location-time A*
+                                                    </li>
+                                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                        Developed Python-based MCP server with LLM integration for natural language interface
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 text-center">
+                                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                                <span class="badge bg-primary">C++</span>
+                                                <span class="badge bg-secondary">Python</span>
+                                                <span class="badge bg-success">gRPC</span>
+                                                <span class="badge bg-info">AGV Control</span>
+                                                <span class="badge bg-warning text-dark">ECBS Algorithm</span>
+                                                <span class="badge bg-danger">Real-time Systems</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- GlobalWafers Research Project -->
+                        <div class="col-12">
+                            <div class="card experience-card shadow-sm border-0" data-experience="globalwafers">
+                                <div class="card-body p-4">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-8">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <i class="bi bi-search text-primary fs-3 me-3"></i>
+                                                <div>
+                                                    <h4 class="card-title mb-1 fw-bold text-primary">AI Research Assistant</h4>
+                                                    <h5 class="text-muted mb-0">GlobalWafers</h5>
+                                                </div>
+                                            </div>
+                                            <p class="text-muted mb-3"><i class="bi bi-calendar3 me-2"></i>October 2021 – June 2023 | Hsinchu, Taiwan</p>
+                                            <p class="card-text mb-3">
+                                                <strong>Equipment Anomaly Detection Project</strong><br>
+                                                Research and development of AI-driven predictive maintenance solutions for semiconductor manufacturing equipment.
+                                            </p>
+                                            
+                                            <div class="experience-details">
+                                                <ul class="list-unstyled">
+                                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                        Conducted data pre-processing and feature extraction on 200+ sensor signals
+                                                    </li>
+                                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                        Trained and deployed Autoencoder-based deep learning model for anomaly prediction
+                                                    </li>
+                                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                        Successfully integrated model into production, reducing maintenance costs
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 text-center">
+                                            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                                <span class="badge bg-primary">Python</span>
+                                                <span class="badge bg-secondary">Machine Learning</span>
+                                                <span class="badge bg-success">Autoencoder</span>
+                                                <span class="badge bg-info">Data Analysis</span>
+                                                <span class="badge bg-warning text-dark">Signal Processing</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="education-section py-5" data-section="education">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold" data-heading="education-title">Education</h2>
+                        <p class="lead text-muted">Academic background in industrial engineering and mechanical engineering</p>
+                    </div>
+                    
+                    <div class="row g-4 justify-content-center">
+                        <!-- Master's Degree -->
+                        <div class="col-lg-6">
+                            <div class="card education-card shadow-sm border-0 h-100" data-education="masters">
+                                <div class="card-body p-4 text-center">
+                                    <div class="education-icon mb-3">
+                                        <i class="bi bi-mortarboard-fill text-primary" style="font-size: 3rem;"></i>
+                                    </div>
+                                    <h4 class="card-title fw-bold text-primary mb-3">Master of Science</h4>
+                                    <h5 class="text-muted mb-3">Industrial Engineering and Management</h5>
+                                    <div class="education-details">
+                                        <p class="mb-2"><i class="bi bi-building me-2 text-primary"></i><strong>National Yang Ming Chiao Tung University</strong></p>
+                                        <p class="mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i>Hsinchu, Taiwan</p>
+                                        <p class="mb-0"><i class="bi bi-calendar3 me-2 text-primary"></i>September 2021 – June 2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bachelor's Degree -->
+                        <div class="col-lg-6">
+                            <div class="card education-card shadow-sm border-0 h-100" data-education="bachelors">
+                                <div class="card-body p-4 text-center">
+                                    <div class="education-icon mb-3">
+                                        <i class="bi bi-gear-fill text-success" style="font-size: 3rem;"></i>
+                                    </div>
+                                    <h4 class="card-title fw-bold text-success mb-3">Bachelor of Science</h4>
+                                    <h5 class="text-muted mb-3">Mechanical Engineering</h5>
+                                    <div class="education-details">
+                                        <p class="mb-2"><i class="bi bi-building me-2 text-success"></i><strong>National Taiwan University</strong></p>
+                                        <p class="mb-2"><i class="bi bi-geo-alt me-2 text-success"></i>Taipei, Taiwan</p>
+                                        <p class="mb-0"><i class="bi bi-calendar3 me-2 text-success"></i>September 2017 – June 2021</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="projects-section py-5" data-section="projects">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold" data-heading="projects-title">My Projects</h2>
+                        <p class="lead text-muted">Engineering solutions that combine theory with practical implementation</p>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <!-- Autonomous Wind Powered Car Project -->
+                        <div class="col-lg-6">
+                            <div class="card project-card shadow-lg border-0 h-100" data-project="autonomous-car" data-animate="zoom-in">
+                                <div class="position-relative project-image-container">
+                                    <img src="img/car1.jpg" 
+                                         alt="Autonomous Wind Powered Car Project" 
+                                         class="card-img-top project-image"
+                                         loading="lazy">
+                                    <div class="project-overlay">
+                                        <div class="project-overlay-content">
+                                            <i class="bi bi-zoom-in fs-1 text-white"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body p-4 d-flex flex-column">
+                                    <div class="mb-3">
+                                        <h4 class="card-title fw-bold text-primary">
+                                            <i class="bi bi-car-front me-2"></i>
+                                            Autonomous Wind Powered Car
+                                        </h4>
+                                    </div>
+                                    <p class="card-text flex-grow-1" data-project-description="main">
+                                        In the capstone course of Mechanical Engineering, we designed and built a wind-powered car with autonomous capabilities. 
+                                        The vehicle can track roads independently and perform overtaking maneuvers, integrating fluid mechanics, kinematics, 
+                                        control systems, and Arduino programming.
+                                    </p>
+                                    <div class="mb-3">
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-primary">Fluid Mechanics</span>
+                                            <span class="badge bg-secondary">Kinematics</span>
+                                            <span class="badge bg-success">Arduino</span>
+                                            <span class="badge bg-info">Control Systems</span>
+                                            <span class="badge bg-warning text-dark">AutoCAD</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid gap-2 d-md-flex">
+                                        <a href="期末報告.pdf" 
+                                           class="btn btn-primary flex-fill"
+                                           target="_blank"
+                                           rel="noopener noreferrer">
+                                            <i class="bi bi-file-earmark-pdf me-2"></i>
+                                            View Report
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shooting Game Project -->
+                        <div class="col-lg-6">
+                            <div class="card project-card shadow-lg border-0 h-100" data-project="shooting-game" data-animate="zoom-in">
+                                <div class="position-relative project-image-container">
+                                    <img src="img/game-preview.svg" 
+                                         alt="2D Shooting Game Preview" 
+                                         class="card-img-top project-image"
+                                         loading="lazy">
+                                    <div class="project-overlay">
+                                        <div class="project-overlay-content">
+                                            <i class="bi bi-play-circle fs-1 text-white"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body p-4 d-flex flex-column">
+                                    <div class="mb-3">
+                                        <h4 class="card-title fw-bold text-primary">
+                                            <i class="bi bi-joystick me-2"></i>
+                                            2D Shooting Game
+                                        </h4>
+                                    </div>
+                                    <p class="card-text flex-grow-1">
+                                        An interactive 2D shooting game built with HTML5 Canvas and JavaScript. Features dynamic enemy generation, 
+                                        collision detection, scoring system, and multiple difficulty levels. Players aim to reach 10,000 points 
+                                        as quickly as possible while avoiding enemies and collecting power-ups.
+                                    </p>
+                                    <div class="mb-3">
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-danger">HTML5</span>
+                                            <span class="badge bg-warning text-dark">Canvas</span>
+                                            <span class="badge bg-success">JavaScript</span>
+                                            <span class="badge bg-primary">Bootstrap</span>
+                                            <span class="badge bg-info">jQuery</span>
+                                            <span class="badge bg-secondary">GSAP</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid gap-2 d-md-flex">
+                                        <a href="./final/" 
+                                           class="btn btn-success flex-fill"
+                                           target="_blank"
+                                           rel="noopener noreferrer">
+                                            <i class="bi bi-play-fill me-2"></i>
+                                            Play Game
+                                        </a>
+                                        <a href="https://github.com/ccyyoyo/ccyyoyo.github.io/tree/master/final" 
+                                           class="btn btn-outline-primary flex-fill"
+                                           target="_blank"
+                                           rel="noopener noreferrer">
+                                            <i class="bi bi-code-slash me-2"></i>
+                                            View Code
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Features Section -->
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <div class="text-center">
+                                <h3 class="fw-bold mb-4">Project Highlights</h3>
+                                <div class="row g-4">
+                                    <div class="col-md-3">
+                                        <div class="feature-item">
+                                            <i class="bi bi-gear-wide-connected text-primary fs-2 mb-3"></i>
+                                            <h5>Engineering Design</h5>
+                                            <p class="text-muted small">Mechanical engineering principles applied to real-world solutions</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="feature-item">
+                                            <i class="bi bi-code-square text-success fs-2 mb-3"></i>
+                                            <h5>Interactive Programming</h5>
+                                            <p class="text-muted small">Dynamic web applications using modern JavaScript</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="feature-item">
+                                            <i class="bi bi-cpu text-info fs-2 mb-3"></i>
+                                            <h5>System Integration</h5>
+                                            <p class="text-muted small">Hardware and software working together seamlessly</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="feature-item">
+                                            <i class="bi bi-trophy text-warning fs-2 mb-3"></i>
+                                            <h5>Problem Solving</h5>
+                                            <p class="text-muted small">Creative solutions to complex technical challenges</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Contact Section -->
+            <section id="contact" class="contact-section py-5 bg-light" data-section="contact">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold" data-heading="contact-title">Get In Touch</h2>
+                        <p class="lead text-muted">Let's connect and discuss opportunities</p>
+                    </div>
+                    
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 col-md-8">
+                            <div class="card shadow-sm border-0" data-animate="fade-up">
+                                <div class="card-body p-4 text-center">
+                                    <div class="mb-4">
+                                        <i class="bi bi-envelope-fill text-primary fs-1"></i>
+                                    </div>
+                                    <h4 class="card-title mb-3">Ready to collaborate?</h4>
+                                    <p class="card-text text-muted mb-4">
+                                        I'm always interested in discussing new opportunities in software engineering, 
+                                        industrial automation, and AI-driven manufacturing solutions.
+                                    </p>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                        <a href="mailto:ccyyoyo55@gmail.com" 
+                                           class="btn btn-primary btn-lg"
+                                           data-contact-method="email">
+                                            <i class="bi bi-envelope me-2"></i>Send Email
+                                        </a>
+                                        <a href="https://www.linkedin.com/in/cherng-yow-cheng-1b7232168/" 
+                                           class="btn btn-outline-primary btn-lg"
+                                           target="_blank"
+                                           rel="noopener noreferrer"
+                                           data-contact-method="linkedin">
+                                            <i class="bi bi-linkedin me-2"></i>LinkedIn
+                                        </a>
+                                        <a href="resume.pdf" 
+                                           class="btn btn-success btn-lg"
+                                           target="_blank"
+                                           rel="noopener noreferrer"
+                                           data-contact-method="resume">
+                                            <i class="bi bi-file-earmark-pdf me-2"></i>Download Resume
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-        <div class="footer">
-            <div class="footer-content">
-                <img src="img/Y.png" alt="foot">
-                <p>created by Yowxz</p>
+        
+        <!-- Footer -->
+        <footer class="footer bg-dark text-light py-4" data-section="footer" data-animate="fade-in">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                            <img src="img/Y.png" 
+                                 alt="Yowxz Logo" 
+                                 class="me-3"
+                                 style="height: 40px; width: auto;"
+                                 loading="lazy">
+                            <div>
+                                <p class="mb-1 fw-semibold">Created by Yowxz</p>
+                                <p class="mb-0 small text-muted">Cherng Yow - Portfolio 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="social-links">
+                            <a href="https://github.com/ccyyoyo" 
+                               class="text-light me-3"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               data-bs-toggle="tooltip"
+                               title="GitHub Profile">
+                                <i class="bi bi-github fs-4"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/cherng-yow-cheng-1b7232168/" 
+                               class="text-light me-3"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               data-bs-toggle="tooltip"
+                               title="LinkedIn Profile">
+                                <i class="bi bi-linkedin fs-4"></i>
+                            </a>
+                            <a href="mailto:contact@example.com" 
+                               class="text-light"
+                               data-bs-toggle="tooltip"
+                               title="Email Contact">
+                                <i class="bi bi-envelope fs-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-3 border-secondary">
+                <div class="text-center">
+                    <p class="mb-0 small text-muted">
+                        &copy; 2024 Cherng Yow. Built with Bootstrap 5 and modern web technologies.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Project Details Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel">Project Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="projectModalBody">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
             </div>
         </div>
     </div>
+
+
+
+
+
+    <!-- Bootstrap 5.3 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
+            crossorigin="anonymous"></script>
     
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Main Interactive JavaScript (temporarily disabled for debugging) -->
+    <!-- <script src="js/main.js"></script> -->
+    
+    <!-- Simple Theme Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const html = document.documentElement;
+            
+            if (!themeToggle || !themeIcon) return;
+            
+            // Get saved theme
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            html.setAttribute('data-bs-theme', savedTheme);
+            updateIcon(savedTheme);
+            
+            // Toggle theme on click
+            themeToggle.addEventListener('click', function() {
+                const current = html.getAttribute('data-bs-theme');
+                const newTheme = current === 'light' ? 'dark' : 'light';
+                
+                html.setAttribute('data-bs-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateIcon(newTheme);
+            });
+            
+            function updateIcon(theme) {
+                if (theme === 'dark') {
+                    themeIcon.className = 'bi bi-moon-stars';
+                } else {
+                    themeIcon.className = 'bi bi-sun';
+                }
+            }
+        });
+    </script>
+    
+    <!-- Tech Particle Background -->
+    <script>
+        // Tech Particle System
+        class TechParticles {
+            constructor() {
+                this.canvas = document.getElementById('techCanvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.connections = [];
+                this.mouse = { x: 0, y: 0 };
+                
+                this.init();
+                this.animate();
+                this.addEventListeners();
+            }
+            
+            init() {
+                this.resize();
+                this.createParticles();
+            }
+            
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+            
+            createParticles() {
+                const particleCount = Math.floor((this.canvas.width * this.canvas.height) / 10000);
+                this.particles = [];
+                
+                for (let i = 0; i < particleCount; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        size: Math.random() * 2 + 1,
+                        opacity: Math.random() * 0.5 + 0.2
+                    });
+                }
+            }
+            
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                this.updateParticles();
+                this.drawConnections();
+                this.drawParticles();
+                requestAnimationFrame(() => this.animate());
+            }
+            
+            updateParticles() {
+                this.particles.forEach(particle => {
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    
+                    if (particle.x < 0 || particle.x > this.canvas.width) particle.vx *= -1;
+                    if (particle.y < 0 || particle.y > this.canvas.height) particle.vy *= -1;
+                });
+            }
+            
+            drawParticles() {
+                const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+                const color = isDark ? '0, 255, 255' : '0, 212, 255';
+                
+                this.particles.forEach(particle => {
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = `rgba(${color}, ${particle.opacity})`;
+                    this.ctx.fill();
+                    
+                    // Add glow effect
+                    this.ctx.shadowBlur = 10;
+                    this.ctx.shadowColor = `rgba(${color}, 0.5)`;
+                    this.ctx.fill();
+                    this.ctx.shadowBlur = 0;
+                });
+            }
+            
+            drawConnections() {
+                const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+                const color = isDark ? '0, 255, 255' : '0, 212, 255';
+                
+                for (let i = 0; i < this.particles.length; i++) {
+                    for (let j = i + 1; j < this.particles.length; j++) {
+                        const dx = this.particles[i].x - this.particles[j].x;
+                        const dy = this.particles[i].y - this.particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 100) {
+                            const opacity = (100 - distance) / 100 * 0.2;
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
+                            this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
+                            this.ctx.strokeStyle = `rgba(${color}, ${opacity})`;
+                            this.ctx.lineWidth = 1;
+                            this.ctx.stroke();
+                        }
+                    }
+                }
+            }
+            
+            addEventListeners() {
+                window.addEventListener('resize', () => {
+                    this.resize();
+                    this.createParticles();
+                });
+                
+                window.addEventListener('mousemove', (e) => {
+                    this.mouse.x = e.clientX;
+                    this.mouse.y = e.clientY;
+                });
+            }
+        }
+        
+        // Initialize tech particles
+        new TechParticles();
+    </script>
+    
+    <!-- Additional Features Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = target.offsetTop - navbarHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Update active navigation link on scroll
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Enhanced project card interactions
+            const projectCards = document.querySelectorAll('.project-card');
+            const projectModal = new bootstrap.Modal(document.getElementById('projectModal'));
+            const projectModalLabel = document.getElementById('projectModalLabel');
+            const projectModalBody = document.getElementById('projectModalBody');
+            
+            // Project data
+            const projectData = {
+                'shooting-game': {
+                    title: '2D Shooting Game',
+                    description: 'An interactive 2D shooting game built with HTML5 Canvas and JavaScript. Features dynamic enemy generation, collision detection, scoring system, and multiple difficulty levels.',
+                    technologies: ['HTML5', 'Canvas', 'JavaScript', 'Bootstrap', 'jQuery', 'GSAP'],
+                    features: [
+                        'Dynamic enemy generation with random properties',
+                        'Real-time collision detection system',
+                        'Multiple difficulty levels (Easy, Normal, Hard, Insane)',
+                        'Score tracking and timer functionality',
+                        'Responsive controls (WASD + mouse)',
+                        'Particle effects and animations',
+                        'Local storage for high scores'
+                    ],
+                    controls: 'WASD keys for movement, mouse click to shoot',
+                    objective: 'Reach 10,000 points as quickly as possible',
+                    playLink: './final/',
+                    codeLink: 'https://github.com/ccyyoyo/ccyyoyo.github.io/tree/master/final'
+                },
+                'autonomous-car': {
+                    title: 'Autonomous Wind Powered Car',
+                    description: 'A capstone project that combines mechanical engineering principles with programming to create a wind-powered vehicle with autonomous navigation capabilities.',
+                    technologies: ['Arduino', 'AutoCAD', 'Fluid Mechanics', 'Control Systems', 'Kinematics'],
+                    features: [
+                        'Wind-powered propulsion system',
+                        'Autonomous road tracking using sensors',
+                        'Obstacle detection and avoidance',
+                        'Overtaking maneuver capability',
+                        'Real-time control system implementation',
+                        'Mechanical design optimization',
+                        'Integration of multiple engineering disciplines'
+                    ],
+                    applications: 'Sustainable transportation, autonomous vehicles, renewable energy',
+                    achievements: 'Successfully demonstrated autonomous navigation and overtaking',
+                    reportLink: '期末報告.pdf'
+                }
+            };
+            
+            projectCards.forEach(card => {
+                const overlay = card.querySelector('.project-overlay');
+                
+                // Add click handler for project overlay to show modal
+                if (card.querySelector('[data-project="shooting-game"]')) {
+                    overlay.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        showProjectModal('shooting-game');
+                    });
+                    overlay.style.cursor = 'pointer';
+                }
+                
+                if (card.querySelector('[data-project="autonomous-car"]')) {
+                    overlay.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        showProjectModal('autonomous-car');
+                    });
+                    overlay.style.cursor = 'pointer';
+                }
+            });
+            
+            // Function to show project modal
+            function showProjectModal(projectKey) {
+                const project = projectData[projectKey];
+                if (!project) return;
+                
+                projectModalLabel.textContent = project.title;
+                
+                let modalContent = `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-3">Description</h6>
+                            <p>${project.description}</p>
+                            
+                            <h6 class="fw-bold mb-3">Technologies Used</h6>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                ${project.technologies.map(tech => `<span class="badge bg-primary">${tech}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-3">Key Features</h6>
+                            <ul class="list-unstyled">
+                                ${project.features.map(feature => `<li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>${feature}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                
+                if (project.controls) {
+                    modalContent += `
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <h6 class="fw-bold mb-2">Controls</h6>
+                                <p class="text-muted">${project.controls}</p>
+                                <h6 class="fw-bold mb-2">Objective</h6>
+                                <p class="text-muted">${project.objective}</p>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                if (project.applications) {
+                    modalContent += `
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <h6 class="fw-bold mb-2">Applications</h6>
+                                <p class="text-muted">${project.applications}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="fw-bold mb-2">Achievements</h6>
+                                <p class="text-muted">${project.achievements}</p>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                modalContent += `
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                `;
+                
+                if (project.playLink) {
+                    modalContent += `
+                        <a href="${project.playLink}" class="btn btn-success" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-play-fill me-2"></i>Play Game
+                        </a>
+                    `;
+                }
+                
+                if (project.codeLink) {
+                    modalContent += `
+                        <a href="${project.codeLink}" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-code-slash me-2"></i>View Code
+                        </a>
+                    `;
+                }
+                
+                if (project.reportLink) {
+                    modalContent += `
+                        <a href="${project.reportLink}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-file-earmark-pdf me-2"></i>View Report
+                        </a>
+                    `;
+                }
+                
+                modalContent += `
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                projectModalBody.innerHTML = modalContent;
+                projectModal.show();
+            }
+            
+            // Add animation on scroll for project cards
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all project cards and feature items
+            document.querySelectorAll('.project-card, .feature-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>

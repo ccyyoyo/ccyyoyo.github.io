@@ -1,0 +1,326 @@
+/* ==========================================
+   Index Page Specific Styles
+   ========================================== */
+
+/* CSS Custom Properties for Theming */
+:root {
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Source Sans Pro', sans-serif;
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+
+    /* Light mode improvements */
+    --text-primary-light: #1a1a1a;
+    --text-secondary-light: #2d3748;
+    --card-bg-light: #ffffff;
+    --section-bg-light: #f8f9fa;
+}
+
+[data-bs-theme="dark"] {
+    --bs-body-bg: #1a1a1a;
+    --bs-body-color: #e5e5e5;
+
+    /* Simplified dark mode - black and gray only */
+    --card-bg-dark: #2a2a2a;
+    --section-bg-dark: #1f1f1f;
+    --text-primary-dark: #e5e5e5;
+    --text-secondary-dark: #b0b0b0;
+    --border-dark: #404040;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--text-primary-light);
+}
+
+[data-bs-theme="dark"] h1,
+[data-bs-theme="dark"] h2,
+[data-bs-theme="dark"] h3,
+[data-bs-theme="dark"] h4,
+[data-bs-theme="dark"] h5,
+[data-bs-theme="dark"] h6 {
+    color: var(--text-primary-dark);
+}
+
+body {
+    font-family: var(--font-body);
+    scroll-behavior: smooth;
+    color: var(--text-secondary-light);
+}
+
+[data-bs-theme="dark"] body {
+    color: var(--text-secondary-dark);
+}
+
+/* Fix navbar sticky behavior */
+.navbar.sticky-top {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1030 !important;
+}
+
+/* Enhanced navigation styles */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+    color: var(--text-primary-light) !important;
+}
+
+[data-bs-theme="dark"] .nav-link {
+    color: var(--text-primary-dark) !important;
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-color);
+    border-radius: 1px;
+}
+
+/* Loading animation */
+.navbar-toggler.active .navbar-toggler-icon {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+/* Light mode - add backgrounds to sections */
+.skills-section.bg-light,
+.education-section,
+.projects-section {
+    background-color: var(--section-bg-light) !important;
+}
+
+/* Dark mode - use black/gray backgrounds */
+[data-bs-theme="dark"] .skills-section.bg-light,
+[data-bs-theme="dark"] .education-section,
+[data-bs-theme="dark"] .projects-section,
+[data-bs-theme="dark"] .contact-section {
+    background-color: var(--section-bg-dark) !important;
+}
+
+/* Enhanced hover effects */
+.card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--card-bg-light) !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: var(--card-bg-dark) !important;
+    border: 1px solid var(--border-dark) !important;
+}
+
+/* Fix Skills section card backgrounds in light mode */
+.skills-section .card {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .skills-section .card {
+    background-color: var(--card-bg-dark) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Improve text contrast in light mode */
+.card-body,
+.card-text,
+p,
+.lead {
+    color: var(--text-secondary-light) !important;
+}
+
+[data-bs-theme="dark"] .card-body,
+[data-bs-theme="dark"] .card-text,
+[data-bs-theme="dark"] p,
+[data-bs-theme="dark"] .lead {
+    color: var(--text-secondary-dark) !important;
+}
+
+.btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Project Cards Styling */
+.project-card {
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 15px !important;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.project-image-container {
+    height: 250px;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 110, 253, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay-content {
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-overlay-content {
+    transform: translateY(0);
+}
+
+/* Feature Items */
+.feature-item {
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    display: block;
+}
+
+/* Badge Styling */
+.badge {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+/* Button Enhancements */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 10px 20px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-card {
+        margin-bottom: 2rem;
+    }
+
+    .project-image-container {
+        height: 200px;
+    }
+
+    .d-md-flex {
+        flex-direction: column !important;
+    }
+
+    .d-md-flex .btn {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Dark theme adjustments */
+[data-bs-theme="dark"] .project-card {
+    background-color: var(--card-bg-dark);
+    border: 1px solid var(--border-dark);
+}
+
+[data-bs-theme="dark"] .feature-item {
+    color: var(--text-secondary-dark);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Tech Canvas Background */
+#techCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Profile Image Styling */
+.profile-image img {
+    max-width: 280px;
+    width: 100%;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 30px var(--primary-color);
+}
+
+/* Education Icons */
+.education-icon i {
+    font-size: 3rem;
+}
+
+/* Footer Logo */
+.footer-logo {
+    height: 40px;
+    width: auto;
+}

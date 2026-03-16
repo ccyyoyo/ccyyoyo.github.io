@@ -47,19 +47,11 @@
         :root {
             --font-heading: 'Inter', sans-serif;
             --font-body: 'Source Sans Pro', sans-serif;
-            --primary-color: #0d6efd;
-            --secondary-color: #6c757d;
-            --success-color: #198754;
-            --info-color: #0dcaf0;
-            --warning-color: #ffc107;
-            --danger-color: #dc3545;
-            --light-color: #f8f9fa;
-            --dark-color: #212529;
         }
-        
+
         [data-bs-theme="dark"] {
-            --bs-body-bg: #1a1a1a;
-            --bs-body-color: #ffffff;
+            --bs-body-bg: #0f172a;
+            --bs-body-color: #f1f5f9;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -314,7 +306,7 @@
                                 <img src="img/碩士大頭.jpg" 
                                      alt="Cherng Yow - Profile Picture" 
                                      class="img-fluid rounded-circle shadow-lg"
-                                     style="max-width: 280px; width: 100%; border: 3px solid var(--primary-color); box-shadow: 0 0 30px var(--primary-color);"
+                                     style="max-width: 280px; width: 100%; border: 3px solid var(--primary-color);"
                                      loading="lazy">
                             </div>
                         </div>
@@ -335,7 +327,6 @@
                         </div>
                     </div>
                 </section>
-            </main>
             <!-- Skills Section -->
             <section id="skills" class="skills-section py-5 bg-light" data-section="skills">
                 <div class="container">
@@ -407,7 +398,7 @@
             </section>
 
             <!-- Experience Section -->
-            <section id="experience" class="experience-section py-5 bg-light" data-section="experience">
+            <section id="experience" class="experience-section py-5" data-section="experience">
                 <div class="container">
                     <div class="text-center mb-5">
                         <h2 class="display-5 fw-bold" data-heading="experience-title">Professional Experience</h2>
@@ -769,8 +760,9 @@
                     </div>
                 </div>
             </section>
+            </main>
         </div>
-        
+
         <!-- Footer -->
         <footer class="footer bg-dark text-light py-4" data-section="footer" data-animate="fade-in">
             <div class="container">
@@ -784,7 +776,7 @@
                                  loading="lazy">
                             <div>
                                 <p class="mb-1 fw-semibold">Created by Yowxz</p>
-                                <p class="mb-0 small text-muted">Cherng Yow - Portfolio 2024</p>
+                                <p class="mb-0 small text-muted">Cherng Yow - Portfolio 2026</p>
                             </div>
                         </div>
                     </div>
@@ -806,7 +798,7 @@
                                title="LinkedIn Profile">
                                 <i class="bi bi-linkedin fs-4"></i>
                             </a>
-                            <a href="mailto:contact@example.com" 
+                            <a href="mailto:ccyyoyo55@gmail.com"
                                class="text-light"
                                data-bs-toggle="tooltip"
                                title="Email Contact">
@@ -818,7 +810,7 @@
                 <hr class="my-3 border-secondary">
                 <div class="text-center">
                     <p class="mb-0 small text-muted">
-                        &copy; 2024 Cherng Yow. Built with Bootstrap 5 and modern web technologies.
+                        &copy; 2026 Cherng Yow. Built with Bootstrap 5 and modern web technologies.
                     </p>
                 </div>
             </div>
@@ -948,25 +940,19 @@
             
             drawParticles() {
                 const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
-                const color = isDark ? '0, 255, 255' : '0, 212, 255';
-                
+                const color = isDark ? '96, 165, 250' : '37, 99, 235';
+
                 this.particles.forEach(particle => {
                     this.ctx.beginPath();
                     this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
                     this.ctx.fillStyle = `rgba(${color}, ${particle.opacity})`;
                     this.ctx.fill();
-                    
-                    // Add glow effect
-                    this.ctx.shadowBlur = 10;
-                    this.ctx.shadowColor = `rgba(${color}, 0.5)`;
-                    this.ctx.fill();
-                    this.ctx.shadowBlur = 0;
                 });
             }
-            
+
             drawConnections() {
                 const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
-                const color = isDark ? '0, 255, 255' : '0, 212, 255';
+                const color = isDark ? '96, 165, 250' : '37, 99, 235';
                 
                 for (let i = 0; i < this.particles.length; i++) {
                     for (let j = i + 1; j < this.particles.length; j++) {

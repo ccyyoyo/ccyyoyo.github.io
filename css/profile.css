@@ -17,14 +17,14 @@
   --neon-purple: #7c3aed;
 
   /* Background Colors */
-  --bg-primary: #f8fafc;
-  --bg-secondary: #f1f5f9;
-  --bg-tertiary: #e2e8f0;
-  --bg-card: rgba(255, 255, 255, 0.97);
+  --bg-primary: #f0f4f8;
+  --bg-secondary: #e8eef5;
+  --bg-tertiary: #dce4ee;
+  --bg-card: rgba(255, 255, 255, 0.85);
   --bg-gradient: linear-gradient(135deg, #2563eb 0%, #0891b2 100%);
   --bg-gradient-light: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(8, 145, 178, 0.08) 100%);
   --bg-gradient-animated: linear-gradient(135deg, #2563eb, #0891b2);
-  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-bg: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(37, 99, 235, 0.15);
   
   /* Text Colors */
@@ -137,11 +137,15 @@ body {
 }
 
 #all {
-  background: var(--bg-primary);
+  background: linear-gradient(180deg, var(--bg-primary) 0%, #e6ecf4 50%, var(--bg-secondary) 100%);
   min-height: 100vh;
   transition: background-color 0.3s ease;
   position: relative;
   overflow-x: hidden;
+}
+
+[data-bs-theme="dark"] #all {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, #131d33 50%, var(--bg-secondary) 100%);
 }
 
 /* ==========================================
@@ -151,6 +155,8 @@ body {
 /* Navigation */
 .navbar {
   background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1px solid var(--glass-border) !important;
   transition: all 0.3s ease !important;
   position: relative;
@@ -245,6 +251,8 @@ body {
 /* Cards */
 .card {
   background: var(--bg-card) !important;
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
   border: 1px solid var(--border-color) !important;
   border-radius: 12px !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07) !important;
@@ -560,6 +568,75 @@ p {
 
 .nav-links a:hover::before {
   width: 100%;
+}
+
+/* ==========================================
+   Avatar Component
+   ========================================== */
+
+.avatar-wrapper {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin: 0 auto;
+}
+
+.avatar-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--neon-purple),
+    var(--primary-color)
+  );
+  animation: ringRotate 8s linear infinite;
+  opacity: 0.7;
+}
+
+.avatar-ring-inner {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+}
+
+.avatar-img {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 1;
+  animation: avatarGlow 4s ease-in-out infinite;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.avatar-wrapper:hover .avatar-img {
+  transform: scale(1.03);
+}
+
+.avatar-wrapper:hover .avatar-ring {
+  opacity: 1;
+}
+
+[data-bs-theme="dark"] .avatar-ring-inner {
+  background: var(--bg-primary);
+}
+
+[data-bs-theme="dark"] .avatar-img {
+  animation-name: avatarGlowDark;
+}
+
+@keyframes avatarGlowDark {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(96, 165, 250, 0.2), 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(96, 165, 250, 0.35), 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
 }
 
 /* ==========================================
@@ -1097,8 +1174,22 @@ p {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-3px);
   }
+}
+
+@keyframes avatarGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.15), 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.25), 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+}
+
+@keyframes ringRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .fade-in-up {
@@ -1118,7 +1209,7 @@ p {
 }
 
 .floating {
-  animation: float 3s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }
 
 /* ==========================================
@@ -1136,6 +1227,37 @@ p {
 
 .pulse-animation {
   animation: pulse 2s infinite;
+}
+
+/* ==========================================
+   Section Enhancements
+   ========================================== */
+
+.hero-section,
+.skills-section,
+.experience-section,
+.education-section,
+.projects-section,
+.contact-section {
+  position: relative;
+}
+
+.skills-section,
+.experience-section,
+.education-section,
+.projects-section,
+.contact-section {
+  border-radius: 24px;
+  margin: 1rem 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.display-5.fw-bold {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ==========================================
